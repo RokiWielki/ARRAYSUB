@@ -11,10 +11,10 @@ public class Test
         {
 			return;
 		}
-		int[] a=Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-		
+		int[] a= Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+
 		int k=int.Parse(Console.ReadLine());
-		int b;
+		int b=0;
 		
 		for(int i = 0; i < n-k+1; i++)
         {
