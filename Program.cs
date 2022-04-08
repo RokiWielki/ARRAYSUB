@@ -8,35 +8,26 @@ public class Test
 		int n = int.Parse(Console.ReadLine());
 		if (n > 1000000)
         {
-			n = 0;
+			return;
 		}
-		int[] k = new int[n+1];
-		for (int i = 0; i < n; i++)
-		{
-			
-			k[i] = int.Parse(Console.ReadLine());
-		}
-		int a=int.Parse(Console.ReadLine());
-		int b = a;
+		int[] a=Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
 		
+		int k=int.Parse(Console.ReadLine());
+		int b;
 		
-		for(int i = 0; i < n; i++)
+		for(int i = 0; i < n-k+1; i++)
         {
-
-			if (a <= k[i])
+			b = a[i];
+			for (int j = 0; j < i + k; j++)
 			{
-				 if (a == k[i])
-				{
-					Console.Write(b + " ");
-					a = k[i + 1];
-				}
-				 if (a > b)
+				if (b < a[j])
                 {
-					b = a;
+					b=a[j];
                 }
-                
 			}
-        }
+			Console.Write( b+ " ");
+
+		}
         
 	}
 }
